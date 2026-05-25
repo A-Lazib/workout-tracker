@@ -8,8 +8,15 @@ let tempDatabase = []
 app.use(express.json());
 
 app.post('/workout', (req, res) => {
-  tempDatabase.push(req.body)
-  res.json({received: req.body});
+  const { user, date, exercises, idempotency_key } = req.body;
+  const duplicate = tempDatabase.find(w => w.idempotency_key === idempotency_key);
+
+  if (duplicate) {
+    return res.status(409).json({error: 'Duplicate request'});
+  }
+
+  tempDatabase.push({ user, date, exercises, idempotency_key });
+  res.status(201).json({ message: 'Workout logged' });
 });
 
 

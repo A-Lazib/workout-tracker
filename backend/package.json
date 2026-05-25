@@ -1,0 +1,25 @@
+{
+  "name": "transaction-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-Lazib/transaction-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/A-Lazib/transaction-service/issues"
+  },
+  "homepage": "https://github.com/A-Lazib/transaction-service#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
